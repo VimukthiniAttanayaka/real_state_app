@@ -11,20 +11,28 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final List<Map<String, dynamic>> items = [
-    {'icon': Icons.home, 'text': 'Home', 'color': AppColors.BackgroundColor1},
-    {'icon': Icons.work, 'text': 'Work', 'color': AppColors.BackgroundColor2},
     {
-      'icon': Icons.shopping_cart,
+      'icon': 'assets/icons/icon1.png',
+      'text': 'Home',
+      'color': AppColors.BackgroundColor1
+    },
+    {
+      'icon': 'assets/icons/icon2.png',
+      'text': 'Work',
+      'color': AppColors.BackgroundColor2
+    },
+    {
+      'icon': 'assets/icons/icon3.png',
       'text': 'Shopping',
       'color': AppColors.BackgroundColor3
     },
     {
-      'icon': Icons.favorite,
+      'icon': 'assets/icons/icon4.png',
       'text': 'Favorites',
       'color': AppColors.BackgroundColor4
     },
     {
-      'icon': Icons.person,
+      'icon': 'assets/icons/icon5.png',
       'text': 'Profile',
       'color': AppColors.BackgroundColor5
     },
@@ -133,9 +141,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                       shape: BoxShape.circle,
                                       color: AppColors.white,
                                     ),
-                                    child: Icon(
+                                    child: Image.asset(
                                       items[index]['icon'],
-                                      color: AppColors.Dark100,
+                                      // color: AppColors.Dark100,
                                     ),
                                   ),
                                   const SizedBox(height: 8),
