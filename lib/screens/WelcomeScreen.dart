@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:real_state_app/colors.dart';
 
-class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({Key? key}) : super(key: key);
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> {
   final List<Map<String, dynamic>> items = [
     {
       'icon': Icons.home,
       'text': 'Home',
-      'color': Colors.orange[200],
+      'color': AppColors.BackgroundColor1
     },
     {
       'icon': Icons.work,
       'text': 'Work',
-      'color': Colors.yellow[200],
+      'color': AppColors.BackgroundColor2
     },
     {
       'icon': Icons.shopping_cart,
       'text': 'Shopping',
-      'color': Colors.green[200],
+      'color': AppColors.BackgroundColor3
     },
     {
       'icon': Icons.favorite,
       'text': 'Favorites',
-      'color': Colors.blue[200],
+      'color': AppColors.BackgroundColor4
     },
     {
       'icon': Icons.person,
       'text': 'Profile',
-      'color': Colors.purple[200],
+      'color': AppColors.BackgroundColor5
     },
     // Add more items to the list
   ];
@@ -57,7 +58,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             child: Text(
               'Homzes',
               style: GoogleFonts.poppins(
-                color: Colors.white,
+                color: AppColors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -72,12 +73,12 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Colors.white,
+                  color: AppColors.white,
                   width: 2.0,
                 ),
               ),
               child: IconButton(
-                icon: const Icon(Icons.menu, color: Colors.white),
+                icon: const Icon(Icons.menu, color: AppColors.white),
                 onPressed: () {
                   // drawer opening logic here
                 },
@@ -95,14 +96,14 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   Text(
                     'Find the best',
                     style: GoogleFonts.poppins(
-                        color: Colors.white,
+                        color: AppColors.white,
                         fontSize: 32,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     'place for you',
                     style: GoogleFonts.poppins(
-                        color: Colors.white,
+                        color: AppColors.white,
                         fontSize: 32,
                         fontWeight: FontWeight.bold),
                   ),
@@ -139,11 +140,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                     height: 60,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: Colors.white, // Example color
+                                      color: AppColors.white, // Example color
                                     ),
                                     child: Icon(
                                       items[index]['icon'],
-                                      color: Colors.black,
+                                      color: AppColors.Dark100,
                                     ),
                                   ),
                                   const SizedBox(height: 8),
@@ -160,9 +161,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             left: 20,
             right: 20,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/catalog01');
+              },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
+                backgroundColor: AppColors.primaryColor,
                 minimumSize: const Size.fromHeight(50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
@@ -170,7 +173,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
               child: Text(
                 'Create an account',
-                style: TextStyle(color: Colors.white, fontSize: 18.0),
+                style: TextStyle(color: AppColors.white, fontSize: 18.0),
               ),
             ),
           ),

@@ -1,22 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:real_state_app/colors.dart';
+import 'package:real_state_app/models/Property.dart';
 
 class Catalog03Widget extends StatefulWidget {
-  final String imageUrl;
-  final int beds;
-  final int bathrooms;
-  final String name;
-  final String address;
-  final String monthlyPrice;
+  final Property property;
 
-  const Catalog03Widget({
-    Key? key,
-    required this.imageUrl,
-    required this.beds,
-    required this.bathrooms,
-    required this.name,
-    required this.address,
-    required this.monthlyPrice,
-  }) : super(key: key);
+const Catalog03Widget({Key? key, required this.property}) : super(key: key);
 
   @override
   State<Catalog03Widget> createState() => _NftWidgetState();
@@ -41,7 +30,7 @@ class _NftWidgetState extends State<Catalog03Widget> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(25),
                 child: Image.network(
-                  widget.imageUrl,
+                  widget.property.imageUrl,
                   width: double.infinity, // Full width
                   height: 250,
                   fit: BoxFit.cover,
@@ -73,12 +62,12 @@ class _NftWidgetState extends State<Catalog03Widget> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 2),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.white,
                         border: Border.all(color: Colors.white60),
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Text(
-                        '${widget.beds} Beds',
+                        '${widget.property.beds} Beds',
                         style: const TextStyle(fontSize: 12),
                       ),
                     ),
@@ -87,12 +76,12 @@ class _NftWidgetState extends State<Catalog03Widget> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 2),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.white,
                         border: Border.all(color: Colors.white60),
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Text(
-                        '${widget.bathrooms} Bathroom',
+                        '${widget.property.bathrooms} Bathroom',
                         style: const TextStyle(fontSize: 12),
                       ),
                     ),
@@ -106,25 +95,25 @@ class _NftWidgetState extends State<Catalog03Widget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
           Text(
-            widget.name,
+            widget.property.title,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
           RichText(
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: '\$ ${widget.monthlyPrice} ',
+                  text: '\$ ${widget.property.price} ',
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black
+                    color: AppColors.Dark100
                   ),
                 ),
                 TextSpan(
                   text: '/ mo',
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.black,
+                    color: AppColors.Dark100,
                     fontWeight: FontWeight.bold
                   ),
                 ),
@@ -134,8 +123,8 @@ class _NftWidgetState extends State<Catalog03Widget> {
         ],
       ),
           Text(
-            widget.address,
-            style: const TextStyle(fontSize: 14, color: Colors.black54),
+            widget.property.location,
+            style: const TextStyle(fontSize: 14, color: AppColors.Dark60),
           ),
     ]),
     );

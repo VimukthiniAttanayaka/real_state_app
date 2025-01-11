@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:real_state_app/colors.dart';
+import 'package:real_state_app/models/Property.dart';
 
 class Catalog01Widget extends StatefulWidget {
-  final String imageUrl;
-  final int beds;
-  final int bathrooms;
-  final String name;
-  final String address;
-  final String monthlyPrice;
-  final String rating;
-  final String reviews;
+  final Property property;
 
   const Catalog01Widget({
     Key? key,
-    required this.imageUrl,
-    required this.beds,
-    required this.bathrooms,
-    required this.name,
-    required this.address,
-    required this.monthlyPrice,
-    required this.reviews,
-    required this.rating
+    required this.property
   }) : super(key: key);
 
   @override
@@ -28,6 +16,8 @@ class Catalog01Widget extends StatefulWidget {
 
 class _NftWidgetState extends State<Catalog01Widget> {
   bool isLiked = false;
+  String rating = '4.9';
+  String reviews = '29';
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +35,7 @@ class _NftWidgetState extends State<Catalog01Widget> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image.network(
-                    widget.imageUrl,
+                    widget.property.imageUrl,
                     width: double.infinity, // Full width
                     height: 250,
                     fit: BoxFit.cover,
@@ -76,12 +66,12 @@ class _NftWidgetState extends State<Catalog01Widget> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 2),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppColors.white,
                           border: Border.all(color: Colors.white60),
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: Text(
-                          '\$ ${widget.monthlyPrice}',
+                          '\$ ${widget.property.price}',
                           style: const TextStyle(fontSize: 12),
                         ),
                       ),
@@ -94,30 +84,30 @@ class _NftWidgetState extends State<Catalog01Widget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  widget.name,
+                  widget.property.title,
                   style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 Row(
                   children: [
                     const Icon(
                       Icons.star_border,
-                      color: Colors.green,
+                      color: AppColors.primaryColor,
                       size: 26,
                       weight: 5,
                     ),
                     Text(
-                      ' ${widget.rating} ', // Assuming 'rating' is available
+                      rating,
                       style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black
+                          color: AppColors.Dark100
                       ),
                     ),
                     Text(
-                      '( ${widget.reviews} Reviews )', // Assuming 'reviews' is available
+                      ' ( ${reviews} Reviews )',
                       style: const TextStyle(
                           fontSize: 12,
-                          color: Colors.black54,
+                          color: AppColors.Dark60,
                           fontWeight: FontWeight.bold
                       ),
                     ),
