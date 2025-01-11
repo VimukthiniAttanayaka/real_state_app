@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:real_state_app/blocs/bloc/property_bloc.dart';
+import 'package:real_state_app/blocs/bloc_exports.dart';
 import 'package:real_state_app/models/Property.dart';
 import 'package:real_state_app/screens/Catalog01Screen.dart';
 import 'package:real_state_app/screens/Catalog03Screen.dart';

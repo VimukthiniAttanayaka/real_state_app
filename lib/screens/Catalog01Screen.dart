@@ -123,7 +123,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/catalog03');
+                          Navigator.pushReplacementNamed(context, '/catalog03');
                         },
                         child: const Text(
                           'View all',
@@ -198,7 +198,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/catalog03');
+                          Navigator.pushReplacementNamed(context, '/catalog03');
                         },
                         child: const Text(
                           'View all',

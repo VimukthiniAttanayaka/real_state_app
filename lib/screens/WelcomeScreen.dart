@@ -161,7 +161,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             right: 20,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/catalog01');
+                Navigator.pushReplacementNamed(context, '/catalog01');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryColor,
