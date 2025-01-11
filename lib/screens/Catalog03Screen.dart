@@ -6,18 +6,16 @@ import 'package:real_state_app/models/Property.dart';
 import 'package:real_state_app/widget/Catalog03Widget.dart';
 
 class Catalog03screen extends StatefulWidget {
-  const Catalog03screen({Key? key}) : super(key: key);
+  const Catalog03screen({super.key});
 
   @override
   State<Catalog03screen> createState() => _Catalog03screenState();
 }
 
 class _Catalog03screenState extends State<Catalog03screen> {
-
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PropertyBloc, PropertyState>(builder: (context, state)
-    {
+    return BlocBuilder<PropertyBloc, PropertyState>(builder: (context, state) {
       List<Property> propertyList = state.allProperty;
       return Scaffold(
           appBar: PreferredSize(
@@ -36,7 +34,7 @@ class _Catalog03screenState extends State<Catalog03screen> {
                     Container(
                       width: 50,
                       height: 50,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle, color: AppColors.Dark100),
                       child: IconButton(
                         icon: const Icon(Icons.menu, color: AppColors.white),
@@ -49,12 +47,12 @@ class _Catalog03screenState extends State<Catalog03screen> {
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppColors.white,
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        child: Row(
+                        child: const Row(
                           children: [
-                            const Padding(
+                            Padding(
                               padding: EdgeInsets.only(
                                   top: 8.0,
                                   bottom: 8.0,
@@ -64,7 +62,7 @@ class _Catalog03screenState extends State<Catalog03screen> {
                             ),
                             Expanded(
                               child: TextField(
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'Search...',
                                 ),
@@ -79,31 +77,28 @@ class _Catalog03screenState extends State<Catalog03screen> {
               )),
           body: SingleChildScrollView(
               child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 15.0),
-                    child: Text(
-                      'Popular rent offers ',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: AppColors.Dark100),
-                    ),
-                  ),
-                  SizedBox(
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height * 0.7, // Adjust height as needed
-                    child: ListView.builder(
-                        itemCount: propertyList.length,
-                        itemBuilder: (context, index) {
-                          var property = propertyList[index];
-                          return Catalog03Widget(property: property);
-                        }),
-                  )
-                ],
-              )));
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 15.0),
+                child: Text(
+                  'Popular rent offers ',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: AppColors.Dark100),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.7,
+                child: ListView.builder(
+                    itemCount: propertyList.length,
+                    itemBuilder: (context, index) {
+                      var property = propertyList[index];
+                      return Catalog03Widget(property: property);
+                    }),
+              )
+            ],
+          )));
     });
   }
 }

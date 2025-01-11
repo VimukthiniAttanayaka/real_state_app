@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:real_state_app/blocs/bloc/property_bloc.dart';
 import 'package:real_state_app/blocs/bloc_exports.dart';
 import 'package:real_state_app/colors.dart';
 import 'package:real_state_app/models/Property.dart';
 import 'package:real_state_app/widget/Catalog01Widget.dart';
 
 class Catalog01screen extends StatefulWidget {
-  const Catalog01screen({Key? key}) : super(key: key);
+  const Catalog01screen({super.key});
 
   @override
   State<Catalog01screen> createState() => _Catalog01screenState();
@@ -18,7 +16,6 @@ class _Catalog01screenState extends State<Catalog01screen> {
 
   @override
   Widget build(BuildContext context) {
-    bool isLiked = false;
     return BlocBuilder<PropertyBloc, PropertyState>(builder: (context, state) {
       List<Property> propertyList = state.allProperty;
       List<Property> newOffersPropertyList = state.allProperty;
@@ -45,7 +42,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
+                    const Text(
                       'Hi,',
                       style: TextStyle(
                           color: AppColors.Dark100,
@@ -76,18 +73,18 @@ class _Catalog01screenState extends State<Catalog01screen> {
               ]),
               const SizedBox(height: 8),
               Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Row(
                     children: [
                       Expanded(
                           child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppColors.white,
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        child: Row(
+                        child: const Row(
                           children: [
-                            const Padding(
+                            Padding(
                               padding: EdgeInsets.only(
                                   top: 8.0,
                                   bottom: 8.0,
@@ -97,7 +94,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
                             ),
                             Expanded(
                               child: TextField(
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'Search...',
                                 ),
@@ -113,13 +110,13 @@ class _Catalog01screenState extends State<Catalog01screen> {
           child: Column(
             children: [
               Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Featured',
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                             color: AppColors.Dark100),
@@ -156,7 +153,6 @@ class _Catalog01screenState extends State<Catalog01screen> {
                                       child: Image.network(
                                         item.imageUrl,
                                         width: double.infinity,
-                                        // Full width
                                         height: 150,
                                         fit: BoxFit.cover,
                                       ),
@@ -170,7 +166,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
                                         decoration: BoxDecoration(
                                           color: AppColors.white,
                                           border:
-                                              Border.all(color: Colors.white60),
+                                              Border.all(color: AppColors.white),
                                           borderRadius:
                                               BorderRadius.circular(25),
                                         ),
@@ -189,13 +185,13 @@ class _Catalog01screenState extends State<Catalog01screen> {
                                 ]));
                       })),
               Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'New offers ',
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                             color: AppColors.Dark100),
@@ -212,8 +208,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
                     ],
                   )),
               SizedBox(
-                height: MediaQuery.of(context).size.height *
-                    0.7, // Adjust height as needed
+                height: MediaQuery.of(context).size.height * 0.7,
                 child: ListView.builder(
                     itemCount: newOffersPropertyList.length,
                     itemBuilder: (context, index) {

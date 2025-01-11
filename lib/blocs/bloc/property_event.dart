@@ -9,9 +9,9 @@ abstract class PropertyEvent {
 
 class AddProperty extends PropertyEvent {
   final Property property;
-  const AddProperty({
-    required this.property
-});
+
+  const AddProperty({required this.property});
+
   @override
   List<Object> get props => [property];
 }

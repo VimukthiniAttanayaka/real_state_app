@@ -1,4 +1,4 @@
-class Property{
+class Property {
   final String imageUrl;
   final int beds;
   final int bathrooms;
@@ -13,5 +13,5 @@ class Property{
     required this.title,
     required this.location,
     required this.price,
-});
+  });
 }

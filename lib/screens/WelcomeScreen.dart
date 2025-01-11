@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:real_state_app/colors.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
@@ -11,16 +11,8 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final List<Map<String, dynamic>> items = [
-    {
-      'icon': Icons.home,
-      'text': 'Home',
-      'color': AppColors.BackgroundColor1
-    },
-    {
-      'icon': Icons.work,
-      'text': 'Work',
-      'color': AppColors.BackgroundColor2
-    },
+    {'icon': Icons.home, 'text': 'Home', 'color': AppColors.BackgroundColor1},
+    {'icon': Icons.work, 'text': 'Work', 'color': AppColors.BackgroundColor2},
     {
       'icon': Icons.shopping_cart,
       'text': 'Shopping',
@@ -36,7 +28,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       'text': 'Profile',
       'color': AppColors.BackgroundColor5
     },
-    // Add more items to the list
   ];
 
   @override
@@ -125,7 +116,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         return Container(
                             width: 160,
                             margin: const EdgeInsets.all(8),
-                            padding: EdgeInsets.all(20),
+                            padding: const EdgeInsets.all(20),
                             decoration: BoxDecoration(
                               color: item['color'].withOpacity(0.8),
                               borderRadius: BorderRadius.circular(25),
@@ -138,9 +129,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   Container(
                                     width: 60,
                                     height: 60,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: AppColors.white, // Example color
+                                      color: AppColors.white,
                                     ),
                                     child: Icon(
                                       items[index]['icon'],
@@ -171,7 +162,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   borderRadius: BorderRadius.circular(25.0),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Create an account',
                 style: TextStyle(color: AppColors.white, fontSize: 18.0),
               ),
