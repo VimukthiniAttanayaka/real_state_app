@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:real_state_app/colors.dart';
+import 'package:realstateapp/colors.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -143,7 +143,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                     ),
                                     child: Image.asset(
                                       items[index]['icon'],
-                                      // color: AppColors.Dark100,
                                     ),
                                   ),
                                   const SizedBox(height: 8),

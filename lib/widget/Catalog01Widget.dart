@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:real_state_app/colors.dart';
-import 'package:real_state_app/models/Property.dart';
+import 'package:realstateapp/colors.dart';
+import 'package:realstateapp/models/Property.dart';
 
 class Catalog01Widget extends StatefulWidget {
   final Property property;

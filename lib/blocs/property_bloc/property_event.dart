@@ -7,11 +7,7 @@ abstract class PropertyEvent {
   List<Object> get props => [];
 }
 
-class AddProperty extends PropertyEvent {
-  final Property property;
-
-  const AddProperty({required this.property});
-
+class GetAllProperties extends PropertyEvent {
   @override
-  List<Object> get props => [property];
+  List<Object> get props => [];
 }
