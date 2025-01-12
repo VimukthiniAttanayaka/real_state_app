@@ -34,7 +34,7 @@ class Property {
     String? price,
   }) {
     return Property(
-        imageUrl: (imageUrl ?? this.imageUrl),
+        imageUrl: imageUrl ?? this.imageUrl,
         beds: beds ?? this.beds,
         bathrooms: bathrooms ?? this.bathrooms,
         title: title ?? this.title,
