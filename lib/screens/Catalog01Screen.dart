@@ -18,7 +18,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
     final propertyBloc = BlocProvider.of<PropertyBloc>(context);
     return Scaffold(
       appBar: AppBar(
-          toolbarHeight: 110.0,
+          toolbarHeight: 125.0,
           automaticallyImplyLeading: false,
           backgroundColor: AppColors.BackgroundColor2,
           shape: const RoundedRectangleBorder(
@@ -216,7 +216,7 @@ class _Catalog01screenState extends State<Catalog01screen> {
                   ],
                 )),
             SizedBox(
-                height: MediaQuery.of(context).size.height * 0.7,
+                height: MediaQuery.of(context).size.height * 0.95,
                 child: BlocBuilder<PropertyBloc, PropertyState>(
                     bloc: propertyBloc,
                     builder: (context, state) {
